@@ -1,0 +1,21 @@
+{
+  "UserName":"TestName",
+  "UserMail" : "TestMail@gmail.com",
+  "AccountInformation":{
+    "UserGenderMale": "Male",
+    "UserGenderFeMale": "FeMale",
+    "Password": "TestPassword",
+    "Day": "6",
+    "Month": "4",
+    "Year": "2000",
+    "FirstName": "FTestName",
+    "LastName": "LTestName",
+    "Company": "Company",
+    "Address1": "Address1",
+    "Address2": "Address2",
+    "Country": "Canada",
+    "State": "State",
+    "City": "City",
+    "ZipCode": "123123",
+  "MobileNumber": "123123"}
+}
