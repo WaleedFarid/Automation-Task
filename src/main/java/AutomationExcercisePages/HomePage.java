@@ -26,7 +26,7 @@ public class HomePage {
     } */
 
     public HomePage navigateToUrl() {
-        DriverFactory.initiateDriver("Chrome", true);
+        DriverFactory.initiateDriver("Chrome", true , "headless");
         return this;
     }
 

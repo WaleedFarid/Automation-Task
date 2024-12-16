@@ -22,7 +22,7 @@ public class FluentTest {
         //driver = new ChromeDriver();
         //driver.manage().window().maximize();
         //driver = DriverFactory.initiateDriver("chrome" , true);
-        driver = DriverFactory.initiateDriver(System.getProperty("browserName") , true);
+        driver = DriverFactory.initiateDriver(System.getProperty("browserName") , true , System.getProperty("headless"));
 
         driver.navigate().to(NavigateUrl);
     }
