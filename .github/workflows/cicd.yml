@@ -1,6 +1,9 @@
 name: Remote Test Execution
 
 on:
+  schedule:
+    - cron: '0 8 * * *'
+
   pull_request:
     branches:
       - main
