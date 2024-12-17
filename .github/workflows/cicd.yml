@@ -1,18 +1,18 @@
 name: Remote Test Execution
 
 on:
+  workflow_dispatch:
+    inputs:
+      testsPath:
+        description: 'Path to Tests to be Executed'
+        default: ''
+
   schedule:
     - cron: '*/15 * * * *'
 
   pull_request:
     branches:
       - main
-
-  workflow_dispatch:
-    inputs:
-      testsPath:
-        description: 'Path to Tests to be Executed'
-        default: ''
 
 jobs:
   Remote_Tests_Execution:
