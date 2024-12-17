@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Tests
         continue-on-error: true
-        run: mvn -DbrowserName="edge" -Dheadless="false" -Dtest="${{github.event.inputs.testsPath}}" test
+        run: mvn -DbrowserName="chrome" -Dheadless="false" -Dtest="${{github.event.inputs.testsPath}}" test
 
       - name: Publish Report
         continue-on-error: true
