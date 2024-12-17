@@ -8,7 +8,7 @@ on:
         default: 'TestPage.FluentTest#registrationTestCase'
 
   schedule:
-    - cron: '*/15 * * *'
+    - cron: '*/10 * * *'
 
   pull_request:
     branches:
