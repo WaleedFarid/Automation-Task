@@ -8,7 +8,6 @@ import org.testng.Assert;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 public class JsonFileManager {
     String jsonReader;
     String jsonFilePath;

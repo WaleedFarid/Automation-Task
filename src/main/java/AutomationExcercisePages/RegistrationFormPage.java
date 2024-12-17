@@ -75,5 +75,4 @@ public class RegistrationFormPage {
         System.out.println("Enter the account information");
         return this;
     }
-
 }

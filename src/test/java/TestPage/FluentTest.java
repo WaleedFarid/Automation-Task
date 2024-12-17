@@ -19,9 +19,6 @@ public class FluentTest {
 
     @BeforeClass
     public void openTheBrowser() {
-        //driver = new ChromeDriver();
-        //driver.manage().window().maximize();
-        //driver = DriverFactory.initiateDriver("chrome" , true);
         driver = DriverFactory.initiateDriver(System.getProperty("browserName") , true , System.getProperty("headless"));
 
         driver.navigate().to(NavigateUrl);

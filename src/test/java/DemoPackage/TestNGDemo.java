@@ -43,39 +43,32 @@ public class TestNGDemo {
         System.out.println("Enter the account information");
     }
 
-
     @Test(dependsOnMethods = {"verifyEnterAccountInformationIsVisible"})
     public void fillingAccountInformationFields() {
         //Select gender , Name and Password
         driver.findElement(By.id("id_gender1")).click();
         driver.findElement(By.id("name")).sendKeys("Waleed");
         driver.findElement(By.id("password")).sendKeys("3EDARd@qxbnSrva");
-
         //Choose from Dropdown List
         new Select(driver.findElement(By.id("days"))).selectByValue("6");
         new Select(driver.findElement(By.id("months"))).selectByValue("4");
         new Select(driver.findElement(By.id("years"))).selectByValue("2000");
-
         //Click on the two Checkpoints below birthdate
         driver.findElement(By.id("newsletter")).click();
         driver.findElement(By.id("optin")).click();
-
         //Enter first , last names , company and address
         driver.findElement(By.id("first_name")).sendKeys("Ahmed");
         driver.findElement(By.id("last_name")).sendKeys("Weloo");
         driver.findElement(By.id("company")).sendKeys("GizaSystems");
         driver.findElement(By.id("address1")).sendKeys("27streetnasrcity");
         driver.findElement(By.id("address2")).sendKeys("27streetnasrcityyy");
-
         //Country dropdown
         new Select(driver.findElement(By.id("country"))).selectByValue("India");
-
         //Enter state , city , zipcode and mobile number
         driver.findElement(By.id("state")).sendKeys("Cairo");
         driver.findElement(By.id("city")).sendKeys("Cairooo");
         driver.findElement(By.id("zipcode")).sendKeys("02");
         driver.findElement(By.id("mobile_number")).sendKeys("010000000000");
-
         //Click on create account button
         driver.findElement(By.xpath("//button[@data-qa='create-account']")).click();
         System.out.println("Regestration form is filled Successfully");
@@ -110,23 +103,10 @@ public class TestNGDemo {
     System.out.println("Account is deleted");
     }
 
-
-
-
     @AfterClass
     public void closeTheBrowser(){
         driver.quit();
     }
 
-
-
 }
 
-/*public void clickonCountineDeleteButton() {
-    driver.findElement(countinueDeleteButton).click();
-    System.out.println("Account is deleted");
-}
-//locator
-private By countinueDeleteButton = By.xpath("//a[@data-qa='continue-button']");
-
- */

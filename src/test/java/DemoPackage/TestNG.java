@@ -14,13 +14,11 @@ public class TestNG {
 
     //Locators
     private By imageVisible = By.xpath("//img[@src='/static/images/home/logo.png']");
-    //private By signupIsVisible = By.xpath("//h2[contains(text(),'New User Signup!')]");
     private By signupIsVisible = By.cssSelector("div.signup-form h2");
     private By loginAndSignupVisible = By.linkText("Signup / Login");
     private By nameOfSignup = By.name("name");
     private By emailOfSignup = By.xpath("//input[@data-qa='signup-email']");
     private By signupClickButton = By.xpath("//button[@data-qa='signup-button']");
-    //private By accountInformationVisible = By.xpath("//b[contains(text(),'Enter Account Information')]");
     private By accountInformationVisible = By.xpath("//h2[@class='title text-center']/b");
     private By genderAccountInformation = By.id("id_gender1");
     private By passwordAccountInformation = By.id("password");
@@ -152,5 +150,4 @@ public class TestNG {
     public void assertAccountDeletedMessageIsVisible() {
         Assert.assertTrue(driver.findElement(accountDeletedVisible).isDisplayed(), "Message is not appeared");
     }
-
 }
