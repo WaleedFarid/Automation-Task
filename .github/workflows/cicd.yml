@@ -31,6 +31,16 @@ jobs:
         continue-on-error: true
         run: mvn -DbrowserName="chrome" -Dheadless="false" -Dtest="${{github.event.inputs.testsPath}}" test
 
+      - name: Generate Allure Report Single File Windows
+        continue-on-error: true
+        run: mvn allure:report
+
+      - name: Upload Allure Report as Artifact Windows
+        uses: actions/upload-artifact@v3
+        with:
+          name: Windows_Allure
+          path: target/site/allure-maven-plugin/index.html
+
       - name: Publish Report
         continue-on-error: true
         uses: dorny/test-reporter@v1
@@ -62,6 +72,16 @@ jobs:
       - name: Run Tests in Headless Mode in chrome
         continue-on-error: true
         run: mvn -DBrowserName="chrome" -Dheadless=headless -Dtest="${{ github.event.inputs.testsPath}}" test
+
+      - name: Generate Allure Report Single File Ubuntu
+        continue-on-error: true
+        run: mvn allure:report
+
+      - name: Upload Allure Report as Artifact Ubuntu
+        uses: actions/upload-artifact@v3
+        with:
+          name: Ubuntu_Allure
+          path: target/site/allure-maven-plugin/index.html
 
       - name: Publish Report
         continue-on-error: true
