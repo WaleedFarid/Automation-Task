@@ -8,7 +8,7 @@ on:
         default: 'TestPage.FluentTest#registrationTestCase'
 
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 20 * * *'
 
   pull_request:
     branches:
@@ -36,7 +36,7 @@ jobs:
 
       - name: Run Tests
         continue-on-error: true
-        run: mvn -DbrowserName="chrome" -Dheadless="false" -Dtest="${{github.event.inputs.testsPath}}" test
+        run: mvn -DbrowserName="chrome" -Dheadless="false" -Dtest="${{ github.event.inputs.testsPath }}" test
 
       - name: Generate Allure Report Single File Windows
         continue-on-error: true
@@ -49,7 +49,7 @@ jobs:
           path: target/site/allure-maven-plugin/index.html
 
       - name: Publish Report
-        continue-on-error: true
+        continue-on-error: false
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
@@ -78,7 +78,7 @@ jobs:
 
       - name: Run Tests in Headless Mode in chrome
         continue-on-error: true
-        run: mvn -DBrowserName="chrome" -Dheadless=headless -Dtest="${{ github.event.inputs.testsPath}}" test
+        run: mvn -DBrowserName="chrome" -Dheadless=headless -Dtest="${{ github.event.inputs.testsPath }}" test
 
       - name: Generate Allure Report Single File Ubuntu
         continue-on-error: true
@@ -91,7 +91,7 @@ jobs:
           path: target/site/allure-maven-plugin/index.html
 
       - name: Publish Report
-        continue-on-error: true
+        continue-on-error: false
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
